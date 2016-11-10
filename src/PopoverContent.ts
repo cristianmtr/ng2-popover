@@ -80,6 +80,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
     left: number = -10000;
     isIn: boolean = false;
     displayType: string = "none";
+    IACCESS_ARROW_SIZE = 10;
 
     // -------------------------------------------------------------------------
     // Anonymous 
@@ -135,7 +136,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
 
         const p = this.positionElements(this.popover.getElement(), this.popoverDiv.nativeElement, this.placement);
         this.displayType = "block";
-        this.top = p.top;
+        this.top = p.top + this.IACCESS_ARROW_SIZE;
         this.left = p.left;
         this.isIn = true;
     }
